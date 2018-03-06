@@ -133,7 +133,7 @@ class Peer(object):
         except socket.error:
             print("Socket failed to connect")
         if is_connected:
-            if host == self.peer_server_host.value and port == self.peer_server_port.value:
+            if host == self.peer_server_host.value and port == self.peer_server_port.value:#not working
                 print("Connected to self")
             sock.send(b'PEER')
             print("Peer Client Connected" + host + " " + str(port))
@@ -155,7 +155,7 @@ class Peer(object):
                                     break
                         if not is_connected:
                             id, host, port = peer_list[i][0], peer_list[i][1], peer_list[i][2]
-                            if self.peer_server_host.value != host or self.peer_server_port.value != port:
+                            if self.peer_server_host.value != host or self.peer_server_port.value != port:#not working
                                 client_connect = threading.Thread(name='peer_client_connect', target=self.peer_client_connect, args=(host, port))
                                 #client_connect.setDaemon(False)
                                 client_connect.start()
@@ -177,7 +177,7 @@ class Peer(object):
                                     break
                         if not is_connected:
                             id, host, port = peer_list[i][0], peer_list[i][1], peer_list[i][2]
-                            if self.peer_server_host.value != host or self.peer_server_port.value != port:
+                            if self.peer_server_host.value != host or self.peer_server_port.value != port:#not working
                                 client_connect = threading.Thread(name='peer_client_connect', target=self.peer_client_connect, args=(host, port))
                                 #client_connect.setDaemon(False)
                                 client_connect.start()
